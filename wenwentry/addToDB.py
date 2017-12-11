@@ -2,6 +2,7 @@
 
 # 导入:
 from sqlalchemy import Column, String, create_engine
+from sqlalchemy import Integer
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -14,15 +15,16 @@ class Restaurant(Base):
     __tablename__ = 'restaurant'
 
     # 表的结构:
-    id=Column(String(20))
-    restaurant_name = Column(String(100), primary_key=True)
+    id= id = Column(Integer, primary_key=True)
+    restaurant_name = Column(String(100))
     restaurant_address = Column(String(300))
 
-def add_restaurant():
+def add_restaurant(requestjson):
     #解析请求的json
-    # cantingName=requestjson['cantingName'],
-    # cantingAddress=requestjson['cantingAddress']
-    # print cantingName,cantingAddress
+    cantingName=requestjson['cantingName'],
+    cantingAddress=requestjson['cantingAddress']
+    print '-------'+cantingName
+    print '-------'+cantingAddress
 
     # 初始化数据库连接:
     engine = create_engine('mysql+mysqlconnector://root:wdbuyer@10.1.101.161:3306/wenwenTest')
@@ -48,8 +50,8 @@ def add_restaurant():
     session.close()
 
 restaurant={
-    'cantingName':u'testcanting',
-    'cantingAddress':u'address1'
+    'cantingName':u'testcanting2',
+    'cantingAddress':u'address2'
 }
-add_restaurant()
+add_restaurant(restaurant)
 
