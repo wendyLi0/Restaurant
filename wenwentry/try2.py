@@ -1,49 +1,32 @@
 # coding=UTF-8
 
 # 导入:
+import json
+
 from sqlalchemy import Column, String, create_engine
+from sqlalchemy.ext.declarative import DeclarativeMeta
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-# 创建对象的基类:
-Base = declarative_base()
-
-# 定义User对象:
-class Restaurant(Base):
-    # 表的名字:
-    __tablename__ = 'restaurant'
-
-    # 表的结构:
-    id=Column(String(20),primary_key=True)
-    restaurant_name = Column(String(100))
-    restaurant_address = Column(String(300))
+#构造字典
+python2json = {}
+#构造list
+listData = [(u'11', u'22'), (u'testname111', u'testaddress111')]
+for item in listData:
+    python2json[item[0]] = item[1]
 
 
-#解析请求的json
-# cantingName=requestjson['cantingName'],
-# cantingAddress=requestjson['cantingAddress']
-# print cantingName,cantingAddress
-
-# 初始化数据库连接:
-engine = create_engine('mysql+mysqlconnector://root:wdbuyer@10.1.101.161:3306/wenwenTest')
-
-# 创建对应column
-Base.metadata.create_all(engine)
-
-# 创建DBSession类型:
-DBSession = sessionmaker(bind=engine)
+#转换成json字符串
+json_str = json.dumps(python2json)
+print json_str
+print type(json_str)
 
 
-# 创建对应column
-Base.metadata.create_all(engine)
 
-# 创建session对象:
-session = DBSession()
-# 创建新User对象:
-new_Restaurant = Restaurant(id='5',restaurant_name='11', restaurant_address='22')
-# 添加到session:
-session.add(new_Restaurant)
-# 提交即保存到数据库:
-session.commit()
-# 关闭session:
-session.close()
+obj = []
+for t in listData:
+    _obj = {}
+    _obj["name"]=t[0]
+    _obj["address"]=t[1]
+    obj.append(_obj)
+print

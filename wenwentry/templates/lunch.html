@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>今天吃什么</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="{{url_for('static',filename='validate.min.js')}}" type="text/javascript"></script>
+
+
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <button type="button" id="canting_ramdon" class="btn btn-default btn-primary">今天吃什么</button>
+        </div>
+        <div class="col-md-4 column">
+            <button type="button" id="canting_list" class="btn btn-default btn-info">餐厅列表</button>
+        </div>
+        <div class="col-md-4 column">
+            <a id="modal-991468" href="#popupdialog" role="button" class="btn" data-toggle="modal">添加餐厅</a>
+            <div class="modal fade" id="popupdialog" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel" align="center">添加餐厅</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" id="addCantingForm">
+                                <div class="form-group">
+                                    <label for="cantingName">餐厅名称</label>
+                                    <input class="form-control" name="cantingName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cantingAddress">餐厅地址</label>
+                                    <input class="form-control" name="cantingAddress">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="save">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-12 table" id="result_show">
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#save").on("click", function (e) {
+            console.log('-------')
+            if ($('#addCantingForm').validate().form()) {
+                e.preventDefault();
+                save();
+            }
+        });
+        function save() {
+            var submitData = {};
+            var formDate = $('#addCantingForm').serializeArray();
+            for (var i = 0; i < formDate.length; i++) {
+                var key = formDate[i].name;
+                if (key == "forNothing") {
+                    continue;
+                }
+                submitData[key] = formDate[i].value
+            }
+            $.ajax({
+                method: "post",
+                url: 'http://127.0.0.1:5000/canting/add',
+                data: submitData,
+                dataType: 'JSON',
+                success: function (result) {
+                    console.log(result);
+                }
+            });
+        }
+        $("#canting_ramdon").on("click",function () {
+            $.ajax({
+                method:"get",
+                url:"http://127.0.0.1:5000/canting/ramdon",
+                success:function (result) {
+                    var info = result.restaurant;
+                    var restaurantHtml = "";
+                    for (var i = 0; i <info.length; i++) {
+                        restaurantHtml += "餐厅名称：" + info[i].cantingName+"餐厅地址："+info[i].cantingAddress+"<br>"
+                    }
+                    $("#result_show").html(restaurantHtml);
+                }
+            });
+        })
+        $("#canting_list").on("click",function () {
+            $.ajax({
+                method:"get",
+                url:"http://127.0.0.1:5000/canting/getlist",
+                success:function (result) {
+                    var info = result.restaurant;
+                    var restaurantHtml = "";
+                    for (var i = 0; i <info.length; i++) {
+                        restaurantHtml += "餐厅名称：" + info[i].cantingName+"餐厅地址："+info[i].cantingAddress+"<br>"
+                    }
+                    $("#result_show").html(restaurantHtml);
+                }
+            });
+
+        })
+    })
+
+</script>
+</body>
+
+</html>
