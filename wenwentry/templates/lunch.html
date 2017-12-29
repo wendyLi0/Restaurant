@@ -12,9 +12,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="{{url_for('static',filename='validate.min.js')}}" type="text/javascript"></script>
 
-
     <style type="text/css">
-
     </style>
 </head>
 <body>
@@ -28,6 +26,7 @@
         </div>
         <div class="col-md-4 column">
             <a id="modal-991468" href="#popupdialog" role="button" class="btn" data-toggle="modal">添加餐厅</a>
+
             <div class="modal fade" id="popupdialog" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -37,37 +36,56 @@
                                     aria-hidden="true">×</span></button>
                             <h4 class="modal-title" id="myModalLabel" align="center">添加餐厅</h4>
                         </div>
+                        <div class="span4">
+                            <div id="msg" style="display: none" class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <label>修改成功</label>
+                            </div>
+                        </div>
+
                         <div class="modal-body">
                             <form role="form" id="addCantingForm">
                                 <div class="form-group">
                                     <label for="cantingName">餐厅名称</label>
-                                    <input class="form-control" name="cantingName">
+                                    <input class="form-control" name="cantingName" id="restaurant_name">
                                 </div>
                                 <div class="form-group">
                                     <label for="cantingAddress">餐厅地址</label>
-                                    <input class="form-control" name="cantingAddress">
+                                    <input class="form-control" name="cantingAddress" id="addr">
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="save">保存</button>
+                            <button type="button" class="btn btn-primary" aria-hidden="true"
+                                    id="save">保存
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="col-md-12 table" id="result_show">
 
+    <div class="row-fluid">
+        <div class="span12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>餐厅名称</th>
+                    <th>餐厅地址</th>
+                </tr>
+                </thead>
+                <tbody id="result_show"></tbody>
+            </table>
+            >
         </div>
     </div>
-
 </div>
 
 <script type="text/javascript">
     $(function () {
         $("#save").on("click", function (e) {
+            var msgBox = $("#add_restaurant");
             console.log('-------')
             if ($('#addCantingForm').validate().form()) {
                 e.preventDefault();
@@ -75,6 +93,8 @@
             }
         });
         function save() {
+            var msgBox = $("#msg");
+            console.log(msgBox.innerHTML);
             var submitData = {};
             var formDate = $('#addCantingForm').serializeArray();
             for (var i = 0; i < formDate.length; i++) {
@@ -86,45 +106,66 @@
             }
             $.ajax({
                 method: "post",
-                url: 'http://127.0.0.1:5000/canting/add',
+                url: 'canting/add',
                 data: submitData,
                 dataType: 'JSON',
                 success: function (result) {
+                    msgBox.show();
+                    setTimeout(function () {
+                        $("#popupdialog").modal("hide");
+                        msgBox.hide();
+                        $("#addr").val("")
+                        $("#restaurant_name").val("")
+                    }, 1000);
                     console.log(result);
                 }
             });
         }
-        $("#canting_ramdon").on("click",function () {
+
+        $("#canting_ramdon").on("click", function () {
+            var divshow = document.getElementById("result_show");
+            var code = '';
             $.ajax({
-                method:"get",
-                url:"http://127.0.0.1:5000/canting/ramdon",
-                success:function (result) {
+                method: "get",
+                url: "canting/ramdon",
+                success: function (result) {
                     var info = result.restaurant;
-                    var restaurantHtml = "";
-                    for (var i = 0; i <info.length; i++) {
-                        restaurantHtml += "餐厅名称：" + info[i].cantingName+"餐厅地址："+info[i].cantingAddress+"<br>"
+                    for (var i = 0; i < info.length; i++) {
+                        code += '<TR><TD>' + info[i].cantingName + '</TD><TD>' + info[i].cantingAddress + '</TD></TR>';
                     }
-                    $("#result_show").html(restaurantHtml);
+                    divshow.innerHTML = code;
                 }
             });
         })
-        $("#canting_list").on("click",function () {
+
+        $("#canting_list").on("click", function () {
+            var divshow = document.getElementById("result_show");
+            var code = '';
             $.ajax({
-                method:"get",
-                url:"http://127.0.0.1:5000/canting/getlist",
-                success:function (result) {
+                method: "get",
+                url: "canting/getlist",
+                success: function (result) {
                     var info = result.restaurant;
-                    var restaurantHtml = "";
-                    for (var i = 0; i <info.length; i++) {
-                        restaurantHtml += "餐厅名称：" + info[i].cantingName+"餐厅地址："+info[i].cantingAddress+"<br>"
+                    for (var i = 0; i < info.length; i++) {
+                        code += '<TR><TD>' + info[i].cantingName + '</TD><TD>' + info[i].cantingAddress + '</TD></TR>';
                     }
-                    $("#result_show").html(restaurantHtml);
+                    divshow.innerHTML = code;
                 }
             });
-
+//            $.ajax({
+//                method:"get",
+//                url:"http://127.0.0.1:5000/canting/getlist",
+//                success:function (result) {
+//                    var info = result.restaurant;
+//                    var restaurantHtml = "";
+//                    for (var i = 0; i <info.length; i++) {
+//                        restaurantHtml += "餐厅名称：" + info[i].cantingName+"餐厅地址："+info[i].cantingAddress+"<br>"
+//                    }
+//                    $("#result_show").html(restaurantHtml);
+//                }
+//            });
         })
     })
-
 </script>
 </body>
 

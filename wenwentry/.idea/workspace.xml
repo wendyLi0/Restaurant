@@ -27,8 +27,8 @@
       <file leaf-file-name="addRes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addRes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
               <folding>
                 <element signature="e#46#59#0" expanded="true" />
               </folding>
@@ -39,8 +39,8 @@
       <file leaf-file-name="app.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="154">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="DB_Operation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB_Operation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+            <state relative-caret-position="379">
+              <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="42" />
               <folding>
                 <element signature="e#22#33#0" expanded="true" />
               </folding>
@@ -61,8 +61,18 @@
       <file leaf-file-name="Log.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
+            <state relative-caret-position="2128">
               <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="153" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zhihuLogin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhihuLogin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="686">
+              <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -71,9 +81,12 @@
       <file leaf-file-name="lunch.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/lunch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="52" column="46" lean-forward="true" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="177">
+              <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2355#2362#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,11 +104,21 @@
       <file leaf-file-name="logintry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logintry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="228">
               <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding>
                 <element signature="e#22#74#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SPic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SPic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,6 +151,10 @@
       <find>__exit</find>
       <find>__ex</find>
       <find>save</find>
+      <find>result_show</find>
+      <find>alert</find>
+      <find>modal</find>
+      <find>form</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -156,8 +183,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="606" />
-    <option name="y" value="-1011" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="738" />
   </component>
@@ -573,7 +599,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="606" y="-1011" width="1280" height="738" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27786753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -926,40 +952,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zabra_deploy_projects.py" />
     <entry file="file://$PROJECT_DIR$/1.gif" />
-    <entry file="file://$PROJECT_DIR$/SPic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cookies">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logintry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding>
-            <element signature="e#22#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/try2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -968,24 +964,6 @@
         <state relative-caret-position="7700">
           <caret line="567" column="27" lean-forward="false" selection-start-line="567" selection-start-column="27" selection-end-line="567" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="153" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhihuLogin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,39 +983,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.log">
+    <entry file="file://$PROJECT_DIR$/Log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="2128">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="153" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addRes.py">
+    <entry file="file://$PROJECT_DIR$/logintry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding>
-            <element signature="e#46#59#0" expanded="true" />
+            <element signature="e#22#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB_Operation.py">
+    <entry file="file://$PROJECT_DIR$/SPic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        <state relative-caret-position="98">
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/try2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="30" selection-end-column="20" />
           <folding>
             <element signature="e#22#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuLogin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_Operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addRes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding>
+            <element signature="e#46#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/lunch.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="52" column="46" lean-forward="true" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="177">
+          <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2355#2362#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
